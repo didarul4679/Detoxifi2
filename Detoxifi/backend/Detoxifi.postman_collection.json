@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "f8b4aefa-d398-41d1-a81b-9d6e2da14e5f",
+		"name": "Detoxifi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33619963"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Kabir Ahmed Ridoy\",\r\n    \"email\":\"kabir@gmail.com\",\r\n    \"password\":\"asdfasdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"kabir@gmail.com\",\r\n    \"password\":\"asdfasdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Password Reset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmNhOTQ2ODE3ZTgwMzk2MjVkODM0MiIsImVtYWlsIjoia2FiaXIuY3NlLmJkQGdtYWlsLmNvbSIsImlhdCI6MTczMDk4MDk5MSwiZXhwIjoxNzMxMDY3MzkxfQ.HNGN4od2s4rsbRqLNEh6MwCfUCbESffmx1f3t4UWeKw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6000/api/auth/request-password-reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"auth",
+						"request-password-reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmNhOTQ2ODE3ZTgwMzk2MjVkODM0MiIsImVtYWlsIjoia2FiaXIuY3NlLmJkQGdtYWlsLmNvbSIsImlhdCI6MTczMDk4MDk5MSwiZXhwIjoxNzMxMDY3MzkxfQ.HNGN4od2s4rsbRqLNEh6MwCfUCbESffmx1f3t4UWeKw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"newPassword\":\"123456789\",\r\n    \"resetCode\":\"877066\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6000/api/auth/reset-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"auth",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Problem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDk5ZDYyMmNiMzFjMTIxMDcxZjc4NyIsImVtYWlsIjoia2FiaXJAZ21haWwuY29tIiwiaWF0IjoxNzMyODc3NjY2LCJleHAiOjE3MzI5NjQwNjZ9.9sLPFXxG83JLCVuRxb4rku7zFSveOPsYy5I1Usa7l1k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"name\": \"Root Canals\",\r\n  \"questions\": [\r\n    {\r\n      \"qus\": \"Have you ever had a root canal?\",\r\n      \"ans\": false,\r\n      \"_id\": \"674484f8365989688595afdj\"\r\n    }\r\n  ],\r\n  \"isCompleted\": false,\r\n  \"solutions\": [\r\n    {\r\n      \"title\": \"Root Canals Leave Dangerous Infections\",\r\n      \"content\": \"More than 41,000 root canals are performed each day, but these common procedures often leave dangerous infections behind. Even after a root canal, the tooth can still harbor harmful bacteria and parasites that your immune system can't reach. These infections can spread through your body, leading to serious health problems.\",\r\n      \"completed\": true,\r\n      \"_id\": \"674484f8365989688595afe0\"\r\n    },\r\n    {\r\n      \"title\": \"Infections Linger After Root Canals\",\r\n      \"content\": \"During a root canal, the dentist removes the nerve and pulp of the tooth, but can't fully sanitize the 6 miles of tiny dentinal tubules. These tubules harbor bacteria, which remain in the tooth even after the procedure. This means the infection that led to the root canal is still there, hidden from your immune system but still active.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe1\"\r\n    },\r\n    {\r\n      \"title\": \"Hidden Infections, Systemic Spread\",\r\n      \"content\": \"The bacteria and parasites trapped in your root-canaled tooth can still access your lymphatic system, allowing the infection to spread throughout your entire body. Every time you chew or grind your teeth, these harmful microorganisms and their toxins are released, entering your bloodstream and potentially leading to serious diseases.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe2\"\r\n    },\r\n    {\r\n      \"title\": \"Chronic Illness Linked to Root Canals\",\r\n      \"content\": \"Infections from root canals can contribute to a wide range of serious health conditions, including: Arthritis, Kidney Disease, Heart Disease, Mental Disorders (Anxiety, Depression), Lupus, Digestive Issues (Leaky Gut), ALS, Uterine Dysfunction (Infertility), Autoimmune Diseases, Cancers (Breast Cancer), Sinusitis.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe3\"\r\n    },\r\n    {\r\n      \"title\": \"Most Root Canals Remain Infected\",\r\n      \"content\": \"In a study of 5,000 root canal-treated teeth that were extracted, 4,999 of them still had infections present. These infections are not just localized—they can cause widespread systemic inflammation and contribute to chronic degenerative diseases.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe4\"\r\n    },\r\n    {\r\n      \"title\": \"Root Canals and Degenerative Diseases\",\r\n      \"content\": \"Research has shown that dental infections, including those from root-canaled teeth, play a significant role in the development of degenerative inflammatory diseases. These microbes can contribute to a range of chronic conditions, further highlighting the serious health risks associated with root canals.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe5\"\r\n    },\r\n    {\r\n      \"title\": \"Increased Risk of Heart Disease\",\r\n      \"content\": \"Having two or more root-canaled teeth increases your odds of developing coronary heart disease by 62%. This is a serious, often overlooked consequence of root canals, which can have long-term effects on your heart health.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe6\"\r\n    },\r\n    {\r\n      \"title\": \"Consider Safer Alternatives\",\r\n      \"content\": \"Given the risks, you are better off pulling the infected tooth and opting for a partial bridge or a dental implant. Your immune system and whole body will benefit from this decision, potentially avoiding the serious health issues linked to root canals.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe7\"\r\n    },\r\n    {\r\n      \"title\": \"Is Your Root Canal Infected?\",\r\n      \"content\": \"If you have a root canal, start with a CBCT scan (3D cone beam) to examine the density of the bone around the root canal. This scan can reveal hidden infections, especially in older root canals, and should be done by a biological dentist who understands the risks associated with root canals.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe8\"\r\n    },\r\n    {\r\n      \"title\": \"Removing Infected Root Canals Safely\",\r\n      \"content\": \"If your dentist finds an infection, the root canal-treated tooth should be removed. A biological dentist will use ozone, lasers, and PRF to disinfect the area and prepare it for an implant. While titanium is a common implant material, it's metal and can negatively affect your brain. Zirconia implants are safer but more expensive.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afe9\"\r\n    },\r\n    {\r\n      \"title\": \"Find a Biological Dentist\",\r\n      \"content\": \"To find a dentist trained in properly addressing cavitations and the dangers of root canals, visit iaomt.org. A biological dentist will ensure that any necessary removal and replacement is done safely, reducing your risk of further health issues.\",\r\n      \"completed\": false,\r\n      \"_id\": \"674484f8365989688595afea\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/problems/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"problems",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Problems",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliNDNiOTdkN2NhMWEzYzkwZTJmNiIsImVtYWlsIjoia2FiaXJAZ21haWwuY29tIiwiaWF0IjoxNzMyODgzNTE1LCJleHAiOjE3MzI5Njk5MTV9.rV39Cvch_YoStSk0U2O2ISijoCmRgf95Jk8LT0RBiC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/problems/get-problems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"problems",
+						"get-problems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Problem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliNDNiOTdkN2NhMWEzYzkwZTJmNiIsImVtYWlsIjoia2FiaXJAZ21haWwuY29tIiwiaWF0IjoxNzMzNjY5NjQxLCJleHAiOjE3MzM3NTYwNDF9.AgneO73w7dHP4_sIKQJo2ZBDJDyNI8R1ayLWB0uCNQI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"questions\": [\r\n            {\r\n                \"qus\": \"Do you ever use fertilizers, pesticides, or herbicides around your home?\",\r\n                \"ans\": false\r\n            },\r\n             {\r\n                \"qus\": \"Do you ever use fertilizers, pesticides?\",\r\n                \"ans\": false\r\n            }\r\n        ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/problems/update/6744845dde7becce203e34be",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"problems",
+						"update",
+						"6744845dde7becce203e34be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Problems",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmNhOTQ2ODE3ZTgwMzk2MjVkODM0MiIsImVtYWlsIjoia2FiaXIuY3NlLmJkQGdtYWlsLmNvbSIsImlhdCI6MTczMjU0MzUyOSwiZXhwIjoxNzMyNjI5OTI5fQ.7PDiCH8qIxVkbUnYmh-N5fKinLTpQGBP5RM7DFi91Rc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/problems/get-unique-problems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"problems",
+						"get-unique-problems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Image Url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Air Fresheners\",\r\n    \"imageUrl\":\"https://res.cloudinary.com/dgdn3p8lc/image/upload/detoxifi/x9ewtt6n5g0mcoz8astl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/problems/add-image-to-problem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"problems",
+						"add-image-to-problem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update All Problem",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"questions\": [\r\n            {\r\n                \"qus\": \"Do you ever use fertilizers, pesticides, or herbicides around home?\"\r\n            }\r\n        ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/problems/update/all-problems/Agrochemicals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"problems",
+						"update",
+						"all-problems",
+						"Agrochemicals"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
